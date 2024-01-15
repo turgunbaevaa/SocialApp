@@ -377,29 +377,6 @@ class ViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-    
-//    func check() {
-//        guard let emailText = idTF.text else { return }
-//        guard let passwordText = passTF.text else { return }
-//        
-//        if emailText.count < 6 && passwordText.count < 6 {
-//            idTitle.text = "Please, fill the field"
-//            idTitle.textColor = .red
-//            
-//            passwordTitle.text = "Please, fill the field"
-//            passwordTitle.textColor = .red
-//        } else {
-//            idTitle.text = "Employee Id / Email"
-//            idTitle.textColor = .init(hex: "#A5A5A5")
-//            
-//            passwordTitle.text = "Password"
-//            passwordTitle.textColor = .init(hex: "#A5A5A5")
-//            
-//            let vc = SuccessPageViewController()
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
     
 }
 
