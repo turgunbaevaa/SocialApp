@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A19771122B5570BC00CBBBEC /* Maker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19771112B5570BC00CBBBEC /* Maker View.swift */; };
 		A1BEB3A52B52BDCA002D8A33 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A42B52BDCA002D8A33 /* UIViewController.swift */; };
 		A1BEB3A72B52CBFC002D8A33 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A62B52CBFC002D8A33 /* UIColor.swift */; };
 		A1BEB3A92B531AFD002D8A33 /* SuccessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A82B531AFD002D8A33 /* SuccessPageViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A19771112B5570BC00CBBBEC /* Maker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maker View.swift"; sourceTree = "<group>"; };
 		A1BEB3A42B52BDCA002D8A33 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A1BEB3A62B52CBFC002D8A33 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A1BEB3A82B531AFD002D8A33 /* SuccessPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPageViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A19771102B55709A00CBBBEC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A19771112B5570BC00CBBBEC /* Maker View.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A1BEB3A32B52BDAE002D8A33 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		A1D4EF7E2B517F1F0037D914 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				A19771102B55709A00CBBBEC /* Helper */,
 				A1BEB3A32B52BDAE002D8A33 /* Extensions */,
 				A1D4EF972B517FFD0037D914 /* delegate */,
 				A1D4EF962B517FEF0037D914 /* common */,
@@ -192,6 +203,7 @@
 				A1D4EF8A2B517F1F0037D914 /* SocialApp.xcdatamodeld in Sources */,
 				A1D4EF822B517F1F0037D914 /* SceneDelegate.swift in Sources */,
 				A1BEB3A92B531AFD002D8A33 /* SuccessPageViewController.swift in Sources */,
+				A19771122B5570BC00CBBBEC /* Maker View.swift in Sources */,
 				A1BEB3A52B52BDCA002D8A33 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

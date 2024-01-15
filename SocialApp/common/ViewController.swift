@@ -10,74 +10,42 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private lazy var mainImage: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(named: "image")
-        img.contentMode = .scaleAspectFit
-        img.clipsToBounds = true
-        return img
-    }()
+    private lazy var mainImage: UIImageView = MakerView().makeImage(image: UIImage(named: "image"),
+                                                                    cornerRadius: 2,
+                                                                    contentMode: .scaleAspectFit)
     
-    private lazy var mainTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Welcome Back"
-        title.textColor = .init(hex: "#FFFFFF")
-        title.font = .systemFont(ofSize: 34, weight: .semibold)
-        return title
-    }()
+    private lazy var mainTitle: UILabel = MakerView().makeLabel(text: "Welcome Back",
+                                                                textColor: .white,
+                                                                textSize: 34,
+                                                                textWeight: .semibold)
     
-    private lazy var descTitle: UILabel = {
-        let desc = UILabel()
-        desc.text = "Sign in to continue"
-        desc.textColor = .init(hex: "#FFFFFF")
-        desc.font = .systemFont(ofSize: 20, weight: .light)
-        return desc
-    }()
+    private lazy var descTitle: UILabel = MakerView().makeLabel(text: "Sign in to continue", 
+                                                                textColor: .white,
+                                                                textSize: 20,
+                                                                textWeight: .light)
     
-    private lazy var subView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .init(hex: "#FFFFFF")
-        return view
-    }()
+    private lazy var subView: UIView = MakerView().makeView(backgroundColor: .white)
     
-    private lazy var idTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Employee Id / Email"
-        title.textColor = .init(hex: "#A5A5A5")
-        title.font = .systemFont(ofSize: 12, weight: .regular)
-        return title
-    }()
+    private lazy var idTitle: UILabel = MakerView().makeLabel(text: "Employee Id / Email",
+                                                              textColor: .init(hex: "#A5A5A5"),
+                                                              textSize: 12,
+                                                              textWeight: .regular)
     
-    private lazy var idTF: UITextField = {
-        let tf = UITextField()
-        let tfView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
-        tf.leftView = tfView
-        tf.leftViewMode = .always
-        return tf
-    }()
+    private lazy var idTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
-    private lazy var passwordTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Password"
-        title.textColor = .init(hex: "#A5A5A5")
-        title.font = .systemFont(ofSize: 12, weight: .regular)
-        return title
-    }()
+    private lazy var passwordTitle: UILabel = MakerView().makeLabel(text: "Password",
+                                                                    textColor: .init(hex: "#A5A5A5"),
+                                                                    textSize: 12,
+                                                                    textWeight: .regular)
     
-    private lazy var passTF: UITextField = {
-        let tf = UITextField()
-        let tfView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
-        tf.leftView = tfView
-        tf.leftViewMode = .always
-        return tf
-    }()
+    private lazy var passTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
-    private lazy var forgotPassButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Forgot Password?", for: .normal)
-        button.setTitleColor(.init(hex: "#4B94EA"), for: .normal)
-        return button
-    }()
+    private lazy var forgotPassButton: UIButton = MakerView().makeButton(title: "Forgot Password?", 
+                                                                         backgroundColor: .clear,
+                                                                         titleColor: .init(hex: "#4B94EA"),
+                                                                         cornerRadius: 0,
+                                                                         action: #selector(forgotPasswordPage(_:)),
+                                                                         font: UIFont.systemFont(ofSize: 14))
     
     private var isChecked = false
     
@@ -88,58 +56,40 @@ class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var checkBoxTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Remember Me"
-        title.textColor = .init(hex: "#000000")
-        title.font = .systemFont(ofSize: 18, weight: .semibold)
-        return title
-    }()
+    private lazy var checkBoxTitle: UILabel = MakerView().makeLabel(text: "Remember Me",
+                                                                    textColor: .black,
+                                                                    textSize: 18,
+                                                                    textWeight: .semibold)
     
-    private lazy var idLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .init(hex: "#000000")
-        return view
-    }()
+    private lazy var idLineView: UIView = MakerView().makeView(backgroundColor: .black)
     
-    private lazy var passLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .init(hex: "#000000")
-        return view
-    }()
+    private lazy var passLineView: UIView = MakerView().makeView(backgroundColor: .black)
     
-    private lazy var signInButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign In", for: .normal)
-        button.backgroundColor = .init(hex: "#2855AE")
-        button.layer.cornerRadius = 15
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(showNextPage(_:)), for: .touchUpInside)
-        return button
-    }()
+    private lazy var signInButton: UIButton = MakerView().makeButton(title: "Sign In",
+                                                                     backgroundColor: .init(hex: "#2855AE"),
+                                                                     titleColor: .white,
+                                                                     cornerRadius: 15,
+                                                                     action: #selector(showNextPage(_:)),
+                                                                     font: UIFont.systemFont(ofSize: 17))
     
-    private lazy var accTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Don't have an Account?"
-        title.textColor = .init(hex: "#000000")
-        title.font = .systemFont(ofSize: 13, weight: .regular)
-        return title
-    }()
+    private lazy var accTitle: UILabel = MakerView().makeLabel(text: "Don't have an Account?",
+                                                               textColor: .black,
+                                                               textSize: 13,
+                                                               textWeight: .regular)
     
-    private lazy var signUpButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.init(hex: "#4B94EA"), for: .normal)
-        return button
-    }()
-    
+    private lazy var signUpButton: UIButton = MakerView().makeButton(title: "Sign Up", 
+                                                                     backgroundColor: .clear,
+                                                                     titleColor: .init(hex: "#4B94EA"),
+                                                                     cornerRadius: 0,
+                                                                     action: #selector(signUpPage(_:)),
+                                                                     font: UIFont.systemFont(ofSize: 14))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         initUI()
-        
     }
+    
     private func initUI() {
         setGradientBackground()
         setupSubView()
@@ -279,7 +229,6 @@ class ViewController: UIViewController {
             make.top.equalTo(passTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
             make.height.equalTo(1)
-            
         }
     }
     
@@ -294,7 +243,6 @@ class ViewController: UIViewController {
     @objc private func checkBoxTapped() {
         isChecked.toggle()
         checkBoxButton.setImage(UIImage(named: isChecked ? "checked" : "unchecked"), for: .normal)
-        
     }
     
     private func setupCheckBox(){
@@ -347,37 +295,37 @@ class ViewController: UIViewController {
         check()
     }
     
+    @objc private func signUpPage(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc private func forgotPasswordPage(_ sender: UIButton) {
+        
+    }
+    
     func check() {
-        if idTF.text?.count ?? 0 < 6 {
-            idTitle.text = "Please, fill the field"
-            idTitle.textColor = .red
-            idTF.layer.borderWidth = 1
-            idTF.layer.borderColor = UIColor.red.cgColor
-        } else {
-            idTitle.text = "Employee Id / Email"
-            idTitle.textColor = .init(hex: "#A5A5A5")
-            idTF.layer.borderColor = UIColor.white.cgColor
-            idTF.layer.borderWidth = 1
-        }
-        
-        if passTF.text?.count ?? 0 < 6 {
-            passwordTitle.text = "Please, fill the field"
-            passwordTitle.textColor = .red
-            passTF.layer.borderWidth = 1
-            passTF.layer.borderColor = UIColor.red.cgColor
-        } else {
-            passwordTitle.text = "Password"
-            passwordTitle.textColor = .init(hex: "#A5A5A5")
-            passTF.layer.borderColor = UIColor.white.cgColor
-            passTF.layer.borderWidth = 1
-        }
-        
+        checkField(text: idTF.text, title: idTitle, textField: idTF)
+        checkField(text: passTF.text, title: passwordTitle, textField: passTF)
+
         if idTF.text?.count ?? 0 >= 6, passTF.text?.count ?? 0 >= 6 {
             let vc = SuccessPageViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+
+    func checkField(text: String?, title: UILabel, textField: UITextField) {
+        if text?.count ?? 0 < 6 {
+            title.text = "Please, fill the field"
+            title.textColor = .red
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            title.text = (textField == idTF) ? "Employee Id / Email" : "Password"
+            title.textColor = .init(hex: "#A5A5A5")
+            textField.layer.borderColor = UIColor.white.cgColor
+            textField.layer.borderWidth = 1
+        }
+    }
 }
 
 
