@@ -296,7 +296,8 @@ class ViewController: UIViewController {
     }
     
     @objc private func signUpPage(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        let vc = SignUpViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func forgotPasswordPage(_ sender: UIButton) {

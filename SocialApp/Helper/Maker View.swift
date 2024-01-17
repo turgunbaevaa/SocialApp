@@ -34,7 +34,7 @@ class MakerView{
         tf.placeholder = placeholder
         tf.textColor = textColor
         tf.keyboardType = keyboardType
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 4))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
         tf.leftView = view
         tf.leftViewMode = leftViewMode
         tf.layer.cornerRadius = cornerRadius

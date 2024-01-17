@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A19478682B57B286005824C1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19478672B57B286005824C1 /* SignUpViewController.swift */; };
+		A194786A2B57CB11005824C1 /* PasswordConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19478692B57CB11005824C1 /* PasswordConfirmation.swift */; };
 		A19771122B5570BC00CBBBEC /* Maker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19771112B5570BC00CBBBEC /* Maker View.swift */; };
 		A1BEB3A52B52BDCA002D8A33 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A42B52BDCA002D8A33 /* UIViewController.swift */; };
 		A1BEB3A72B52CBFC002D8A33 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A62B52CBFC002D8A33 /* UIColor.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A19478672B57B286005824C1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A19478692B57CB11005824C1 /* PasswordConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmation.swift; sourceTree = "<group>"; };
 		A19771112B5570BC00CBBBEC /* Maker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maker View.swift"; sourceTree = "<group>"; };
 		A1BEB3A42B52BDCA002D8A33 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A1BEB3A62B52CBFC002D8A33 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			children = (
 				A1BEB3A42B52BDCA002D8A33 /* UIViewController.swift */,
 				A1BEB3A62B52CBFC002D8A33 /* UIColor.swift */,
+				A19478692B57CB11005824C1 /* PasswordConfirmation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			children = (
 				A1D4EF832B517F1F0037D914 /* ViewController.swift */,
 				A1BEB3A82B531AFD002D8A33 /* SuccessPageViewController.swift */,
+				A19478672B57B286005824C1 /* SignUpViewController.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -198,11 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D4EF842B517F1F0037D914 /* ViewController.swift in Sources */,
+				A194786A2B57CB11005824C1 /* PasswordConfirmation.swift in Sources */,
 				A1BEB3A72B52CBFC002D8A33 /* UIColor.swift in Sources */,
 				A1D4EF802B517F1F0037D914 /* AppDelegate.swift in Sources */,
 				A1D4EF8A2B517F1F0037D914 /* SocialApp.xcdatamodeld in Sources */,
 				A1D4EF822B517F1F0037D914 /* SceneDelegate.swift in Sources */,
 				A1BEB3A92B531AFD002D8A33 /* SuccessPageViewController.swift in Sources */,
+				A19478682B57B286005824C1 /* SignUpViewController.swift in Sources */,
 				A19771122B5570BC00CBBBEC /* Maker View.swift in Sources */,
 				A1BEB3A52B52BDCA002D8A33 /* UIViewController.swift in Sources */,
 			);
