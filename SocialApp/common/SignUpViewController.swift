@@ -16,59 +16,59 @@ class SignUpViewController: UIViewController{
     private lazy var subView: UIView = MakerView().makeView(backgroundColor: .white)
     
     private lazy var fullNameTitle: UILabel = MakerView().makeLabel(text: "Full Name",
-                                                              textColor: .init(hex: "#A5A5A5"),
-                                                              textSize: 11,
-                                                              textWeight: .regular)
+                                                                    textColor: .init(hex: "#A5A5A5"),
+                                                                    textSize: 13,
+                                                                    textWeight: .regular)
     
     private lazy var fullNameTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var fullNameLineView: UIView = MakerView().makeView(backgroundColor: .black)
-        
+    
     private lazy var mobileNumberTitle: UILabel = MakerView().makeLabel(text: "Mobile Number",
-                                                                    textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 11,
-                                                                    textWeight: .regular)
+                                                                        textColor: .init(hex: "#A5A5A5"),
+                                                                        textSize: 13,
+                                                                        textWeight: .regular)
     
     private lazy var mobileNumberTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var mobileNumberLineView: UIView = MakerView().makeView(backgroundColor: .black)
-
+    
     private lazy var emailTitle: UILabel = MakerView().makeLabel(text: "Email",
-                                                                    textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 11,
-                                                                    textWeight: .regular)
+                                                                 textColor: .init(hex: "#A5A5A5"),
+                                                                 textSize: 13,
+                                                                 textWeight: .regular)
     
     private lazy var emailTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var emailLineView: UIView = MakerView().makeView(backgroundColor: .black)
-
+    
     private lazy var userNameTitle: UILabel = MakerView().makeLabel(text: "User Name",
                                                                     textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 11,
+                                                                    textSize: 13,
                                                                     textWeight: .regular)
     
     private lazy var userNameTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var userNameLineView: UIView = MakerView().makeView(backgroundColor: .black)
-
+    
     private lazy var pswTitle: UILabel = MakerView().makeLabel(text: "Password",
-                                                                    textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 11,
-                                                                    textWeight: .regular)
+                                                               textColor: .init(hex: "#A5A5A5"),
+                                                               textSize: 13,
+                                                               textWeight: .regular)
     
     private lazy var pswTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var pswLineView: UIView = MakerView().makeView(backgroundColor: .black)
-
+    
     private lazy var confirmPswTitle: UILabel = MakerView().makeLabel(text: "Confirm Password",
-                                                                    textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 11,
-                                                                    textWeight: .regular)
+                                                                      textColor: .init(hex: "#A5A5A5"),
+                                                                      textSize: 13,
+                                                                      textWeight: .regular)
     
     private lazy var confirmPswTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
     
     private lazy var confirmPswLineView: UIView = MakerView().makeView(backgroundColor: .black)
-
+    
     private lazy var signUpButton: UIButton = MakerView().makeButton(title: "Sign Up",
                                                                      backgroundColor: .init(hex: "#2855AE"),
                                                                      titleColor: .white,
@@ -140,7 +140,7 @@ class SignUpViewController: UIViewController{
             make.height.equalTo(260)
         }
     }
-        
+    
     private let height = UIScreen.main.bounds.height
     
     private func setupSubView(){
@@ -192,7 +192,7 @@ class SignUpViewController: UIViewController{
         fullNameLineView.snp.makeConstraints { make in
             make.top.equalTo(fullNameTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
             
         }
     }
@@ -219,7 +219,7 @@ class SignUpViewController: UIViewController{
         mobileNumberLineView.snp.makeConstraints { make in
             make.top.equalTo(mobileNumberTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
         }
     }
     
@@ -245,7 +245,7 @@ class SignUpViewController: UIViewController{
         emailLineView.snp.makeConstraints { make in
             make.top.equalTo(emailTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
         }
     }
     
@@ -271,7 +271,7 @@ class SignUpViewController: UIViewController{
         userNameLineView.snp.makeConstraints { make in
             make.top.equalTo(userNameTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
         }
     }
     
@@ -297,7 +297,7 @@ class SignUpViewController: UIViewController{
         pswLineView.snp.makeConstraints { make in
             make.top.equalTo(pswTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
         }
     }
     
@@ -323,7 +323,7 @@ class SignUpViewController: UIViewController{
         confirmPswLineView.snp.makeConstraints { make in
             make.top.equalTo(confirmPswTF.snp.bottom).offset(3)
             make.leading.trailing.equalTo(subView).inset(20)
-            make.height.equalTo(0.5)
+            make.height.equalTo(1)
         }
     }
     
@@ -353,16 +353,101 @@ class SignUpViewController: UIViewController{
             make.leading.equalTo(accTitle.snp.trailing).offset(2)
         }
     }
-    
-    @objc private func showSuccessPage(_ sender: UIButton){
-        check()
-    }
-    
     @objc private func signInPage(_ sender: UIButton){
         navigationController?.popToRootViewController(animated: true)
     }
     
-    func check() {
-       
+    @objc private func showSuccessPage(_ sender: UIButton) {
+        let missingFields = checkValidFields()
+
+        if missingFields.isEmpty {
+            if checkField(pswTextField: pswTF, confirmPswTextField: confirmPswTF, pswTitle: pswTitle, confirmPswTitle: confirmPswTitle) {
+                resetValidFieldsUI(fullNameTF: fullNameTF, mobileNumberTF: mobileNumberTF, emailTF: emailTF, userNameTF: userNameTF)
+                let vc = SuccessPageViewController()
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            for field in missingFields {
+                field.layer.borderWidth = 1
+                field.layer.borderColor = UIColor.red.cgColor
+            }
+        }
     }
+    
+    private func checkValidFields() -> [UITextField] {
+        var missingFields: [UITextField] = []
+
+        if !fullNameTF.hasText {
+            missingFields.append(fullNameTF)
+        }
+        if !mobileNumberTF.hasText {
+            missingFields.append(mobileNumberTF)
+        }
+        if !emailTF.hasText {
+            missingFields.append(emailTF)
+        }
+        if !userNameTF.hasText {
+            missingFields.append(userNameTF)
+        }
+        return missingFields
+    }
+    
+    private func checkField(pswTextField: UITextField, confirmPswTextField: UITextField, pswTitle: UILabel, confirmPswTitle: UILabel) -> Bool {
+        guard let password = pswTextField.text, let confirmPassword = confirmPswTextField.text, !password.isEmpty, !confirmPassword.isEmpty else {
+            let errorMessage = "TextFields are empty"
+            updateUIForError(pswTitle: pswTitle, confirmPswTitle: confirmPswTitle, pswTextField: pswTextField, confirmPswTextField: confirmPswTextField, errorMessage: errorMessage)
+            return false
+        }
+        
+        if password != confirmPassword {
+            let errorMessage = "Passwords don't match. Please check and try again."
+            updateUIForError(pswTitle: pswTitle, confirmPswTitle: confirmPswTitle, pswTextField: pswTextField, confirmPswTextField: confirmPswTextField, errorMessage: errorMessage)
+            return false
+        } else {
+            resetUI(pswTitle: pswTitle, confirmPswTitle: confirmPswTitle, pswTextField: pswTextField, confirmPswTextField: confirmPswTextField)
+            return true
+        }
+    }
+
+    func updateUIForError(pswTitle: UILabel, confirmPswTitle: UILabel, pswTextField: UITextField, confirmPswTextField: UITextField, errorMessage: String) {
+        pswTitle.text = errorMessage
+        confirmPswTitle.text = errorMessage
+        
+        pswTitle.textColor = .red
+        confirmPswTitle.textColor = .red
+        
+        pswTextField.layer.borderWidth = 1
+        pswTextField.layer.borderColor = UIColor.red.cgColor
+        
+        confirmPswTextField.layer.borderWidth = 1
+        confirmPswTextField.layer.borderColor = UIColor.red.cgColor
+    }
+
+    func resetUI(pswTitle: UILabel, confirmPswTitle: UILabel, pswTextField: UITextField, confirmPswTextField: UITextField) {
+        pswTitle.text = "Password"
+        pswTitle.textColor = .init(hex: "#A5A5A5")
+        pswTextField.layer.borderColor = UIColor.white.cgColor
+        pswTextField.layer.borderWidth = 1
+        
+        confirmPswTitle.text = "Confirm Password"
+        confirmPswTitle.textColor = .init(hex: "#A5A5A5")
+        confirmPswTextField.layer.borderColor = UIColor.white.cgColor
+        confirmPswTextField.layer.borderWidth = 1
+    }
+    
+    func resetValidFieldsUI(fullNameTF: UITextField, mobileNumberTF: UITextField, emailTF: UITextField, userNameTF: UITextField) {
+        
+        fullNameTF.layer.borderColor = UIColor.white.cgColor
+        fullNameTF.layer.borderWidth = 1
+
+        mobileNumberTF.layer.borderColor = UIColor.white.cgColor
+        mobileNumberTF.layer.borderWidth = 1
+        
+        emailTF.layer.borderColor = UIColor.white.cgColor
+        emailTF.layer.borderWidth = 1
+        
+        userNameTF.layer.borderColor = UIColor.white.cgColor
+        userNameTF.layer.borderWidth = 1
+    }
+    
 }

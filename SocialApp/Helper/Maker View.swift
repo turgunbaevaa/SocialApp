@@ -26,12 +26,15 @@ class MakerView{
     }
     
     func makeTextField(placeholder: String = "Fill the field",
+                       placeholderFontSize: CGFloat = 13.0,
                        textColor: UIColor = .black,
                        keyboardType: UIKeyboardType = .default,
                        leftViewMode: UITextField.ViewMode,
                        cornerRadius: CGFloat = 2) -> UITextField{
         let tf = UITextField()
         tf.placeholder = placeholder
+        tf.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                          attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: placeholderFontSize)])
         tf.textColor = textColor
         tf.keyboardType = keyboardType
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
