@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
-class MakerView{
+class MakerView: UIViewController, UITextFieldDelegate{
     
     static let shared = MakerView()
     
@@ -62,39 +63,18 @@ class MakerView{
         return view
     }
     
-//    func makeButton(title: String?,
-//                    backgroundColor: UIColor,
-//                    titleColor: UIColor?,
-//                    cornerRadius: CGFloat,
-//                    action: Selector,
-//                    font: UIFont) -> UIButton {
-//        let button = UIButton()
-//        button.setTitle(title, for: .normal)
-//        button.backgroundColor = backgroundColor
-//        button.setTitleColor(titleColor, for: .normal)
-//        button.layer.cornerRadius = cornerRadius
-//        button.addTarget(self, action: action, for: .touchUpInside)
-//        button.titleLabel?.font = font
-//        return button
-//    }
-    
     func makeButton(title: String?,
                     backgroundColor: UIColor,
                     titleColor: UIColor?,
                     cornerRadius: CGFloat,
-                    action: Selector?, // Updated to accept Selector
+                    //action: (Selector, UIViewController),
                     font: UIFont) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
         button.backgroundColor = backgroundColor
         button.setTitleColor(titleColor, for: .normal)
         button.layer.cornerRadius = cornerRadius
-        
-        // Check if action is provided before adding target
-        if let action = action {
-            button.addTarget(self, action: action, for: .touchUpInside)
-        }
-        
+        //button.addTarget(action.1, action: action.0, for: .touchUpInside)
         button.titleLabel?.font = font
         return button
     }
@@ -108,13 +88,50 @@ class MakerView{
     }
     
     func makeCodeButton(backgroundColor: UIColor = .white,
-                        titleColor: UIColor? = .black, cornerRadius: CGFloat, borderWidth: CGFloat = 1, borderColor: CGColor = .init(red: 0, green: 0, blue: 0, alpha: 0) ) -> UIButton {
+                        titleColor: UIColor? = .black,
+                        cornerRadius: CGFloat,
+                        borderWidth: CGFloat = 1,
+                        borderColor: CGColor = UIColor.black.cgColor) -> UIButton {
         let button = UIButton()
         button.backgroundColor = backgroundColor
+        button.setTitle("X", for: .normal)
         button.setTitleColor(titleColor, for: .normal)
         button.layer.cornerRadius = cornerRadius
         button.layer.borderWidth = borderWidth
         button.layer.borderColor = borderColor
         return button
     }
+    
+    func makeCodeResetTF(placeholder: String = "Enter your mobile number or email",
+                       placeholderFontSize: CGFloat = 13.0,
+                       textColor: UIColor = .black,
+                       keyboardType: UIKeyboardType = .default,
+                       leftViewMode: UITextField.ViewMode,
+                         cornerRadius: CGFloat = 5, backgroundColor: UIColor, borderColor: CGColor) -> UITextField{
+        let tf = UITextField()
+        tf.placeholder = placeholder
+        tf.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                      attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: placeholderFontSize)])
+        tf.textColor = textColor
+        tf.keyboardType = keyboardType
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
+        tf.leftView = view
+        tf.leftViewMode = leftViewMode
+        tf.layer.cornerRadius = cornerRadius
+        tf.backgroundColor = backgroundColor
+        tf.layer.borderColor = borderColor
+        tf.layer.borderWidth = 1.0 
+        tf.isEnabled = false
+        return tf
+    }
+    
+    func makePhoneNumberTextField(delegate: UITextFieldDelegate) -> PhoneNumberTextField {
+        let textField = PhoneNumberTextField()
+        textField.placeholder = "Enter Phone Number"
+        textField.borderStyle = .roundedRect
+        textField.withPrefix = true
+        textField.delegate = delegate
+        return textField
+    }
+
 }

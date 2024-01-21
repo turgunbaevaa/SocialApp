@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1182E362B5D514C00824782 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1182E352B5D514C00824782 /* SignInViewController.swift */; };
+		A1182E382B5D533300824782 /* NewPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1182E372B5D533300824782 /* NewPwdViewController.swift */; };
+		A1182E3B2B5D5BCA00824782 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1182E3A2B5D5BCA00824782 /* PhoneNumberKit */; };
+		A1182E3D2B5D5BCA00824782 /* PhoneNumberKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A1182E3C2B5D5BCA00824782 /* PhoneNumberKit-Dynamic */; };
+		A1182E3F2B5D5BCA00824782 /* PhoneNumberKit-Static in Frameworks */ = {isa = PBXBuildFile; productRef = A1182E3E2B5D5BCA00824782 /* PhoneNumberKit-Static */; };
 		A19478682B57B286005824C1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19478672B57B286005824C1 /* SignUpViewController.swift */; };
 		A1A292792B5BD7C100645864 /* ForgotPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A292782B5BD7C100645864 /* ForgotPwdViewController.swift */; };
 		A1A2927B2B5C4FC400645864 /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2927A2B5C4FC400645864 /* MakerView.swift */; };
@@ -15,7 +20,6 @@
 		A1BEB3A92B531AFD002D8A33 /* SuccessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEB3A82B531AFD002D8A33 /* SuccessPageViewController.swift */; };
 		A1D4EF802B517F1F0037D914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4EF7F2B517F1F0037D914 /* AppDelegate.swift */; };
 		A1D4EF822B517F1F0037D914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4EF812B517F1F0037D914 /* SceneDelegate.swift */; };
-		A1D4EF842B517F1F0037D914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4EF832B517F1F0037D914 /* ViewController.swift */; };
 		A1D4EF8A2B517F1F0037D914 /* SocialApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1D4EF882B517F1F0037D914 /* SocialApp.xcdatamodeld */; };
 		A1D4EF8C2B517F210037D914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D4EF8B2B517F210037D914 /* Assets.xcassets */; };
 		A1D4EF8F2B517F210037D914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D4EF8D2B517F210037D914 /* LaunchScreen.storyboard */; };
@@ -23,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1182E352B5D514C00824782 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A1182E372B5D533300824782 /* NewPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPwdViewController.swift; sourceTree = "<group>"; };
 		A19478672B57B286005824C1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A1A292782B5BD7C100645864 /* ForgotPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdViewController.swift; sourceTree = "<group>"; };
 		A1A2927A2B5C4FC400645864 /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
@@ -32,7 +38,6 @@
 		A1D4EF7C2B517F1F0037D914 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D4EF7F2B517F1F0037D914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1D4EF812B517F1F0037D914 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1D4EF832B517F1F0037D914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1D4EF892B517F1F0037D914 /* SocialApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialApp.xcdatamodel; sourceTree = "<group>"; };
 		A1D4EF8B2B517F210037D914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1D4EF8E2B517F210037D914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,7 +49,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1182E3D2B5D5BCA00824782 /* PhoneNumberKit-Dynamic in Frameworks */,
+				A1182E3F2B5D5BCA00824782 /* PhoneNumberKit-Static in Frameworks */,
 				A1D4EF9B2B51C56A0037D914 /* SnapKit in Frameworks */,
+				A1182E3B2B5D5BCA00824782 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +109,11 @@
 		A1D4EF962B517FEF0037D914 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				A1D4EF832B517F1F0037D914 /* ViewController.swift */,
 				A1BEB3A82B531AFD002D8A33 /* SuccessPageViewController.swift */,
 				A19478672B57B286005824C1 /* SignUpViewController.swift */,
 				A1A292782B5BD7C100645864 /* ForgotPwdViewController.swift */,
+				A1182E352B5D514C00824782 /* SignInViewController.swift */,
+				A1182E372B5D533300824782 /* NewPwdViewController.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -145,6 +154,9 @@
 			name = SocialApp;
 			packageProductDependencies = (
 				A1D4EF9A2B51C56A0037D914 /* SnapKit */,
+				A1182E3A2B5D5BCA00824782 /* PhoneNumberKit */,
+				A1182E3C2B5D5BCA00824782 /* PhoneNumberKit-Dynamic */,
+				A1182E3E2B5D5BCA00824782 /* PhoneNumberKit-Static */,
 			);
 			productName = SocialApp;
 			productReference = A1D4EF7C2B517F1F0037D914 /* SocialApp.app */;
@@ -176,6 +188,7 @@
 			mainGroup = A1D4EF732B517F1F0037D914;
 			packageReferences = (
 				A1D4EF992B51C56A0037D914 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A1182E392B5D5BCA00824782 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = A1D4EF7D2B517F1F0037D914 /* Products */;
 			projectDirPath = "";
@@ -203,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D4EF842B517F1F0037D914 /* ViewController.swift in Sources */,
+				A1182E362B5D514C00824782 /* SignInViewController.swift in Sources */,
 				A1BEB3A72B52CBFC002D8A33 /* UIColor.swift in Sources */,
 				A1D4EF802B517F1F0037D914 /* AppDelegate.swift in Sources */,
 				A1A292792B5BD7C100645864 /* ForgotPwdViewController.swift in Sources */,
@@ -211,6 +224,7 @@
 				A1A2927B2B5C4FC400645864 /* MakerView.swift in Sources */,
 				A1D4EF822B517F1F0037D914 /* SceneDelegate.swift in Sources */,
 				A1BEB3A92B531AFD002D8A33 /* SuccessPageViewController.swift in Sources */,
+				A1182E382B5D533300824782 /* NewPwdViewController.swift in Sources */,
 				A19478682B57B286005824C1 /* SignUpViewController.swift in Sources */,
 				A1BEB3A52B52BDCA002D8A33 /* UIViewController.swift in Sources */,
 			);
@@ -427,6 +441,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A1182E392B5D5BCA00824782 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.6;
+			};
+		};
 		A1D4EF992B51C56A0037D914 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -438,6 +460,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A1182E3A2B5D5BCA00824782 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1182E392B5D5BCA00824782 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+		A1182E3C2B5D5BCA00824782 /* PhoneNumberKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1182E392B5D5BCA00824782 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = "PhoneNumberKit-Dynamic";
+		};
+		A1182E3E2B5D5BCA00824782 /* PhoneNumberKit-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1182E392B5D5BCA00824782 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = "PhoneNumberKit-Static";
+		};
 		A1D4EF9A2B51C56A0037D914 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A1D4EF992B51C56A0037D914 /* XCRemoteSwiftPackageReference "SnapKit" */;

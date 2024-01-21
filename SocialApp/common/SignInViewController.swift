@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  SignInViewController.swift
 //  SocialApp
 //
-//  Created by Aruuke Turgunbaeva on 12/1/24.
+//  Created by Aruuke Turgunbaeva on 21/1/24.
 //
 
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     private lazy var mainImage: UIImageView = MakerView.shared.makeImage(image: UIImage(named: "image"),
                                                                          cornerRadius: 2,
@@ -44,7 +44,6 @@ class ViewController: UIViewController {
                                                                               backgroundColor: .clear,
                                                                               titleColor: .init(hex: "#4B94EA"),
                                                                               cornerRadius: 0,
-                                                                              action: #selector(forgotPasswordPage(_:)),
                                                                               font: UIFont.systemFont(ofSize: 14))
     
     private var isChecked = false
@@ -69,7 +68,6 @@ class ViewController: UIViewController {
                                                                      backgroundColor: .init(hex: "#2855AE"),
                                                                      titleColor: .white,
                                                                      cornerRadius: 15,
-                                                                     action: #selector(showNextPage(_:)),
                                                                      font: UIFont.systemFont(ofSize: 17))
     
     private lazy var accTitle: UILabel = MakerView().makeLabel(text: "Don't have an Account?",
@@ -81,7 +79,6 @@ class ViewController: UIViewController {
                                                                      backgroundColor: .clear,
                                                                      titleColor: .init(hex: "#4B94EA"),
                                                                      cornerRadius: 0,
-                                                                     action: #selector(signUpPage(_:)),
                                                                      font: UIFont.systemFont(ofSize: 14))
     
     override func viewDidLoad() {
@@ -272,6 +269,7 @@ class ViewController: UIViewController {
             make.height.equalTo(40)
             make.width.equalTo(170)
         }
+        signInButton.addTarget(self, action: #selector(showSuccessPage(_:)), for: .touchUpInside)
     }
     
     private func setupAccTitle(){
@@ -289,15 +287,16 @@ class ViewController: UIViewController {
             make.centerY.equalTo(accTitle.snp.centerY)
             make.leading.equalTo(accTitle.snp.trailing).offset(2)
         }
+        signUpButton.addTarget(self, action: #selector(signUpPage(_:)), for: .touchUpInside)
     }
     
     
-    @objc private func showNextPage(_ sender: UIButton) {
+    @objc private func showSuccessPage(_ sender: UIButton) {
         check()
     }
     
     @objc private func signUpPage(_ sender: UIButton) {
-        let vc = ForgotPwdViewController()
+        let vc = SignUpViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -330,7 +329,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
-
-

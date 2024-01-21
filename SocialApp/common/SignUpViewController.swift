@@ -73,7 +73,6 @@ class SignUpViewController: UIViewController{
                                                                      backgroundColor: .init(hex: "#2855AE"),
                                                                      titleColor: .white,
                                                                      cornerRadius: 15,
-                                                                     action: #selector(showSuccessPage(_:)),
                                                                      font: UIFont.systemFont(ofSize: 17))
     
     private lazy var accTitle: UILabel = MakerView().makeLabel(text: "Already have an Account?",
@@ -85,7 +84,6 @@ class SignUpViewController: UIViewController{
                                                                      backgroundColor: .clear,
                                                                      titleColor: .init(hex: "#4B94EA"),
                                                                      cornerRadius: 0,
-                                                                     action: #selector(signInPage(_:)),
                                                                      font: UIFont.systemFont(ofSize: 14))
     
     override func viewDidLoad() {
@@ -335,6 +333,7 @@ class SignUpViewController: UIViewController{
             make.height.equalTo(40)
             make.width.equalTo(170)
         }
+        signUpButton.addTarget(self, action: #selector(showSuccessPage(_:)), for: .touchUpInside)
     }
     
     private func setupAccTitle(){
@@ -352,6 +351,7 @@ class SignUpViewController: UIViewController{
             make.centerY.equalTo(accTitle.snp.centerY)
             make.leading.equalTo(accTitle.snp.trailing).offset(2)
         }
+        signInButton.addTarget(self, action: #selector(signInPage(_:)), for: .touchUpInside)
     }
     @objc private func signInPage(_ sender: UIButton){
         navigationController?.popToRootViewController(animated: true)
