@@ -10,42 +10,42 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private lazy var mainImage: UIImageView = MakerView().makeImage(image: UIImage(named: "image"),
-                                                                    cornerRadius: 2,
-                                                                    contentMode: .scaleAspectFit)
+    private lazy var mainImage: UIImageView = MakerView.shared.makeImage(image: UIImage(named: "image"),
+                                                                         cornerRadius: 2,
+                                                                         contentMode: .scaleAspectFit)
     
-    private lazy var mainTitle: UILabel = MakerView().makeLabel(text: "Welcome Back",
-                                                                textColor: .white,
-                                                                textSize: 34,
-                                                                textWeight: .semibold)
+    private lazy var mainTitle: UILabel = MakerView.shared.makeLabel(text: "Welcome Back",
+                                                                     textColor: .white,
+                                                                     textSize: 34,
+                                                                     textWeight: .semibold)
     
-    private lazy var descTitle: UILabel = MakerView().makeLabel(text: "Sign in to continue", 
-                                                                textColor: .white,
-                                                                textSize: 20,
-                                                                textWeight: .light)
+    private lazy var descTitle: UILabel = MakerView.shared.makeLabel(text: "Sign in to continue",
+                                                                     textColor: .white,
+                                                                     textSize: 20,
+                                                                     textWeight: .light)
     
-    private lazy var subView: UIView = MakerView().makeView(backgroundColor: .white)
+    private lazy var subView: UIView = MakerView.shared.makeView(backgroundColor: .white)
     
-    private lazy var idTitle: UILabel = MakerView().makeLabel(text: "Employee Id / Email",
-                                                              textColor: .init(hex: "#A5A5A5"),
-                                                              textSize: 12,
-                                                              textWeight: .regular)
+    private lazy var idTitle: UILabel = MakerView.shared.makeLabel(text: "Employee Id / Email",
+                                                                   textColor: .init(hex: "#A5A5A5"),
+                                                                   textSize: 12,
+                                                                   textWeight: .regular)
     
-    private lazy var idTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
+    private lazy var idTF: UITextField = MakerView.shared.makeTextField(leftViewMode: .always)
     
-    private lazy var passwordTitle: UILabel = MakerView().makeLabel(text: "Password",
-                                                                    textColor: .init(hex: "#A5A5A5"),
-                                                                    textSize: 12,
-                                                                    textWeight: .regular)
+    private lazy var passwordTitle: UILabel = MakerView.shared.makeLabel(text: "Password",
+                                                                         textColor: .init(hex: "#A5A5A5"),
+                                                                         textSize: 12,
+                                                                         textWeight: .regular)
     
-    private lazy var passTF: UITextField = MakerView().makeTextField(leftViewMode: .always)
+    private lazy var passTF: UITextField = MakerView.shared.makeTextField(leftViewMode: .always)
     
-    private lazy var forgotPassButton: UIButton = MakerView().makeButton(title: "Forgot Password?", 
-                                                                         backgroundColor: .clear,
-                                                                         titleColor: .init(hex: "#4B94EA"),
-                                                                         cornerRadius: 0,
-                                                                         action: #selector(forgotPasswordPage(_:)),
-                                                                         font: UIFont.systemFont(ofSize: 14))
+    private lazy var forgotPassButton: UIButton = MakerView.shared.makeButton(title: "Forgot Password?",
+                                                                              backgroundColor: .clear,
+                                                                              titleColor: .init(hex: "#4B94EA"),
+                                                                              cornerRadius: 0,
+                                                                              action: #selector(forgotPasswordPage(_:)),
+                                                                              font: UIFont.systemFont(ofSize: 14))
     
     private var isChecked = false
     
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                                                                textSize: 13,
                                                                textWeight: .regular)
     
-    private lazy var signUpButton: UIButton = MakerView().makeButton(title: "Sign Up", 
+    private lazy var signUpButton: UIButton = MakerView().makeButton(title: "Sign Up",
                                                                      backgroundColor: .clear,
                                                                      titleColor: .init(hex: "#4B94EA"),
                                                                      cornerRadius: 0,
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         setupPassTF()
         setupPassLine()
         
-        setupForgotPassTitle()
+        setupForgotPassButton()
         
         setupCheckBox()
         setupCheckBoxTitle()
@@ -131,7 +131,7 @@ class ViewController: UIViewController {
             make.height.equalTo(260)
         }
     }
-
+    
     private func setupDescTitle(){
         view.addSubview(descTitle)
         descTitle.snp.makeConstraints { make in
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
             make.leading.equalToSuperview().offset(16)
         }
     }
-
+    
     private func setupTitle(){
         view.addSubview(mainTitle)
         mainTitle.snp.makeConstraints { make in
@@ -232,12 +232,13 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setupForgotPassTitle(){
+    private func setupForgotPassButton() {
         subView.addSubview(forgotPassButton)
         forgotPassButton.snp.makeConstraints { make in
-            make.top.equalTo(passLineView.snp.bottom).offset(3)
+            make.top.equalTo(passLineView.snp.bottom).offset(5)
             make.trailing.equalTo(subView).offset(-20)
         }
+        forgotPassButton.addTarget(self, action: #selector(forgotPasswordPage(_:)), for: .touchUpInside)
     }
     
     @objc private func checkBoxTapped() {
@@ -296,24 +297,25 @@ class ViewController: UIViewController {
     }
     
     @objc private func signUpPage(_ sender: UIButton) {
-        let vc = SignUpViewController()
+        let vc = ForgotPwdViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func forgotPasswordPage(_ sender: UIButton) {
-        
+        let vc = ForgotPwdViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func check() {
         checkField(text: idTF.text, title: idTitle, textField: idTF)
         checkField(text: passTF.text, title: passwordTitle, textField: passTF)
-
+        
         if idTF.text?.count ?? 0 >= 6, passTF.text?.count ?? 0 >= 6 {
             let vc = SuccessPageViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
     func checkField(text: String?, title: UILabel, textField: UITextField) {
         if text?.count ?? 0 < 6 {
             title.text = "Please, fill the field"

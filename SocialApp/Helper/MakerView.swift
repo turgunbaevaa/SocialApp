@@ -1,13 +1,15 @@
 //
-//  Maker View.swift
+//  MakerView.swift
 //  SocialApp
 //
-//  Created by Aruuke Turgunbaeva on 15/1/24.
+//  Created by Aruuke Turgunbaeva on 20/1/24.
 //
 
 import UIKit
 
 class MakerView{
+    
+    static let shared = MakerView()
     
     func makeLabel(text: String,
                    textColor: UIColor,
@@ -60,19 +62,59 @@ class MakerView{
         return view
     }
     
+//    func makeButton(title: String?,
+//                    backgroundColor: UIColor,
+//                    titleColor: UIColor?,
+//                    cornerRadius: CGFloat,
+//                    action: Selector,
+//                    font: UIFont) -> UIButton {
+//        let button = UIButton()
+//        button.setTitle(title, for: .normal)
+//        button.backgroundColor = backgroundColor
+//        button.setTitleColor(titleColor, for: .normal)
+//        button.layer.cornerRadius = cornerRadius
+//        button.addTarget(self, action: action, for: .touchUpInside)
+//        button.titleLabel?.font = font
+//        return button
+//    }
+    
     func makeButton(title: String?,
                     backgroundColor: UIColor,
                     titleColor: UIColor?,
                     cornerRadius: CGFloat,
-                    action: Selector,
+                    action: Selector?, // Updated to accept Selector
                     font: UIFont) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
         button.backgroundColor = backgroundColor
         button.setTitleColor(titleColor, for: .normal)
         button.layer.cornerRadius = cornerRadius
-        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        // Check if action is provided before adding target
+        if let action = action {
+            button.addTarget(self, action: action, for: .touchUpInside)
+        }
+        
         button.titleLabel?.font = font
+        return button
+    }
+    
+    func makeHorizontalStackView(axis: NSLayoutConstraint.Axis, spacing: CGFloat) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = axis
+        stackView.distribution = .fillEqually
+        stackView.spacing = spacing
+        return stackView
+    }
+    
+    func makeCodeButton(backgroundColor: UIColor = .white,
+                        titleColor: UIColor? = .black, cornerRadius: CGFloat, borderWidth: CGFloat = 1, borderColor: CGColor = .init(red: 0, green: 0, blue: 0, alpha: 0) ) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = backgroundColor
+        button.setTitleColor(titleColor, for: .normal)
+        button.layer.cornerRadius = cornerRadius
+        button.layer.borderWidth = borderWidth
+        button.layer.borderColor = borderColor
         return button
     }
 }
