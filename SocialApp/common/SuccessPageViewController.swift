@@ -26,6 +26,12 @@ class SuccessPageViewController: UIViewController {
         return title
     }()
     
+    private lazy var signInButton: UIButton = MakerView().makeButton(title: "Sign In",
+                                                                     backgroundColor: .init(hex: "#4AC6E9"),
+                                                                     titleColor: .white,
+                                                                     cornerRadius: 15,
+                                                                     font: UIFont.systemFont(ofSize: 18))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +42,7 @@ class SuccessPageViewController: UIViewController {
         view.backgroundColor = .init(hex: "#4AC6E9")
         setupImage()
         setupTitle()
-        
+        setupSignInButton()
     }
     
     private func setupImage(){
@@ -56,7 +62,21 @@ class SuccessPageViewController: UIViewController {
         }
     }
     
-
+    private func setupSignInButton(){
+        view.addSubview(signInButton)
+        signInButton.snp.makeConstraints { make in
+            make.top.equalTo(mainTitle.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+        }
+        
+        signInButton.addTarget(self, action: #selector(showSignInPage(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func showSignInPage(_ sender: UIButton){
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     
 
 }

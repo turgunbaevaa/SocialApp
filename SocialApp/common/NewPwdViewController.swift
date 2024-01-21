@@ -175,12 +175,35 @@ class NewPwdViewController: UIViewController{
             make.height.equalTo(35)
             make.width.equalTo(95)
         }
-        submitButton.addTarget(self, action: #selector(successPage(_:)), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(showSuccessPage(_:)), for: .touchUpInside)
     }
     
-    @objc private func successPage(_ sender: UIButton){
-        let vc = SuccessPageViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    @objc private func showSuccessPage(_ sender: UIButton) {
+        check()
+    }
+    
+    func check() {
+        checkField(text: newPwdTF.text, title: newPwdTitle, textField: newPwdTF)
+        checkField(text: confirmPwdTF.text, title: confirmPwdTitle, textField: confirmPwdTF)
+        
+        if newPwdTF.text?.count ?? 0 >= 6, confirmPwdTF.text?.count ?? 0 >= 6 {
+            let vc = SuccessPageViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func checkField(text: String?, title: UILabel, textField: UITextField) {
+        if text?.count ?? 0 < 6 {
+            title.text = "Please, fill the field"
+            title.textColor = .red
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            title.text = (textField == newPwdTF) ? "New Password" : "Confirm Password"
+            title.textColor = .init(hex: "#A5A5A5")
+            textField.layer.borderColor = UIColor.white.cgColor
+            textField.layer.borderWidth = 1
+        }
     }
     
 }
